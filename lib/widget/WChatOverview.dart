@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/model/ChatOverview.dart';
 
 class WChatOverview extends StatelessWidget {
-  const WChatOverview({Key? key}) : super(key: key);
+  ChatOverview? item;
+  WChatOverview({Key? key, this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

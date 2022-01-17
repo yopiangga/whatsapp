@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/model/StatusOverview.dart';
 
 class WStatusOverview extends StatelessWidget {
-  const WStatusOverview({Key? key}) : super(key: key);
+  StatusOverview? item;
+
+  WStatusOverview({Key? key, this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/model/CallOverview.dart';
 
 class WCallOverview extends StatelessWidget {
-  const WCallOverview({Key? key}) : super(key: key);
+  CallOverview? item;
+
+  WCallOverview({Key? key, this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
