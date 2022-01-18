@@ -3,14 +3,17 @@ class ChatOverview {
   String image;
   String name;
   String lastChat;
-  bool online;
   String lastTimeChat;
+  bool readedLastChat;
+  bool online;
 
-  ChatOverview(
-      {this.unread = 0,
-      this.image = "",
-      this.name = "",
-      this.lastChat = "",
-      this.online = false,
-      this.lastTimeChat = ""});
+  ChatOverview({
+    this.unread = 0,
+    this.image = "",
+    this.name = "",
+    this.lastChat = "",
+    this.lastTimeChat = "",
+    this.readedLastChat = false,
+    this.online = false,
+  });
 }

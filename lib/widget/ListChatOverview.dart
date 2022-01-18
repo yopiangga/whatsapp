@@ -4,18 +4,24 @@ import 'package:whatsapp/provider/PChatOverview.dart';
 import 'package:whatsapp/widget/WChatOverview.dart';
 
 class ListChatOverview extends StatelessWidget {
-  const ListChatOverview({Key? key}) : super(key: key);
+  int unread;
+  ListChatOverview({Key? key, this.unread = 0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final chatOverview = Provider.of<PChatOverview>(context);
     final allChatOverview = chatOverview.chatOverviews;
     return Container(
+      padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
           children: allChatOverview
-              .map((e) => WChatOverview(
-                    item: e,
-                  ))
+              .map((e) => e.unread >= unread
+                  ? WChatOverview(
+                      item: e,
+                    )
+                  : Container())
               .toList()),
     );
   }
