@@ -11,6 +11,9 @@ class ListStatusOverview extends StatelessWidget {
     final statusOverview = Provider.of<PStatusOverview>(context);
     final allStatusOverview = statusOverview.statusOverviews;
     return Container(
+      padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: allStatusOverview
             .map((e) => WStatusOverview(

@@ -4,6 +4,7 @@ import 'package:whatsapp/custom/CustomColors.dart';
 import 'package:whatsapp/model/MyStatusOverview.dart';
 import 'package:whatsapp/provider/PNabBottom.dart';
 import 'package:whatsapp/widget/ListChatOverview.dart';
+import 'package:whatsapp/widget/ListStatusOverview.dart';
 import 'package:whatsapp/widget/WMyStatusOverview.dart';
 import 'package:whatsapp/widget/WNavBottom.dart';
 
@@ -186,9 +187,7 @@ class _SDashboardState extends State<SDashboard>
               ),
               Container(
                 padding: EdgeInsets.all(10),
-                // child: ListChatOverview(
-                //   unread: 0,
-                // ),
+                child: ListStatusOverview(),
               ),
             ],
           ),
