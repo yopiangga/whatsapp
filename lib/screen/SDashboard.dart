@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp/custom/CustomColors.dart';
+import 'package:whatsapp/model/MyStatusOverview.dart';
 import 'package:whatsapp/provider/PNabBottom.dart';
 import 'package:whatsapp/widget/ListChatOverview.dart';
+import 'package:whatsapp/widget/WMyStatusOverview.dart';
 import 'package:whatsapp/widget/WNavBottom.dart';
 
 class SDashboard extends StatefulWidget {
@@ -147,8 +149,48 @@ class _SDashboardState extends State<SDashboard>
               ),
             ],
           ),
-          Center(
-            child: Text("Page 2"),
+          ListView(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 30, top: 10),
+                child: Text(
+                  "Your Updates",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.greenText),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: WMyStatusOverview(
+                  item: MyStatusOverview(
+                      title: "My Status",
+                      description: "Tap to add status updates",
+                      image: "",
+                      action: Icons.more_vert),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 30, top: 10),
+                child: Text(
+                  "Viewed Updates",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.greenText),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                // child: ListChatOverview(
+                //   unread: 0,
+                // ),
+              ),
+            ],
           ),
           Center(
             child: Text("Page 3"),
