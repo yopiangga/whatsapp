@@ -5,6 +5,22 @@ import 'package:whatsapp/model/ChatOverview.dart';
 class PChatOverview with ChangeNotifier {
   List<ChatOverview> _chatOverviews = [
     ChatOverview(
+        unread: 0,
+        image: "https://picsum.photos/200/300?random=6",
+        name: faker.person.name(),
+        lastChat: faker.lorem.sentence(),
+        lastTimeChat: "02:00 PM",
+        readedLastChat: false,
+        online: true),
+    ChatOverview(
+        unread: 0,
+        image: "https://picsum.photos/200/300?random=7",
+        name: faker.person.name(),
+        lastChat: faker.lorem.sentence(),
+        lastTimeChat: "03:00 PM",
+        readedLastChat: false,
+        online: true),
+    ChatOverview(
         unread: 2,
         image: "https://picsum.photos/200/300?random=1",
         name: faker.person.name(),

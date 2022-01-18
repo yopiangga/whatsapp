@@ -9,12 +9,12 @@ class WChatOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Row(
         children: [
           Container(
-            width: 75,
-            height: 60,
+            width: 65,
+            height: 50,
             // color: Colors.amber,
             child: Stack(
               children: [
@@ -22,11 +22,16 @@ class WChatOverview extends StatelessWidget {
                     left: 0,
                     top: 0,
                     child: Container(
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.amber),
+                      decoration: BoxDecoration(shape: BoxShape.circle),
                       child: CircleAvatar(
-                        radius: 30, // Image radius
-                        backgroundImage: NetworkImage(item!.image),
+                        radius: 25, // Image radius
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage('assets/images/user.jpg'),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 25,
+                          backgroundImage: NetworkImage(item!.image),
+                        ),
                       ),
                     )),
                 item!.unread > 0
