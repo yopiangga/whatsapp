@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:whatsapp/custom/CustomColors.dart';
 import 'package:whatsapp/model/MyStatusOverview.dart';
 import 'package:whatsapp/provider/PNabBottom.dart';
+import 'package:whatsapp/widget/ListCallOverview.dart';
 import 'package:whatsapp/widget/ListChatOverview.dart';
 import 'package:whatsapp/widget/ListStatusOverview.dart';
 import 'package:whatsapp/widget/WMyStatusOverview.dart';
@@ -39,7 +40,7 @@ class _SDashboardState extends State<SDashboard>
     return Scaffold(
       appBar: AppBar(
           backgroundColor: CustomColors.greenDark,
-          title: Text("WhatsApp"),
+          title: Text("WhatsApp Premium"),
           actions: [
             Icon(Icons.search),
             SizedBox(
@@ -189,10 +190,56 @@ class _SDashboardState extends State<SDashboard>
                 padding: EdgeInsets.all(10),
                 child: ListStatusOverview(),
               ),
+              // FloatingActionButton(
+              //   onPressed: () {},
+              //   backgroundColor: CustomColors.greenText,
+              //   child: Icon(Icons.edit),
+              // ),
+              // FloatingActionButton(
+              //   onPressed: () {},
+              //   backgroundColor: CustomColors.greenDark,
+              //   child: Icon(Icons.camera_alt),
+              // )
             ],
           ),
-          Center(
-            child: Text("Page 3"),
+          ListView(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 30, top: 10),
+                child: Text(
+                  "Missed Calls",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.orange),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: ListCallOverview(
+                  status: 1,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 30, top: 10),
+                child: Text(
+                  "Other Calls",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.greenText),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: ListCallOverview(
+                  status: 2,
+                ),
+              ),
+            ],
           )
         ],
       ),

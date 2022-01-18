@@ -69,12 +69,24 @@ class WStatusOverview extends StatelessWidget {
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  item!.time,
-                  overflow: TextOverflow.ellipsis,
-                  style:
-                      TextStyle(color: CustomColors.greenDark.withOpacity(0.5)),
-                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.watch_later_outlined,
+                      color: CustomColors.greenDark.withOpacity(0.5),
+                      size: 14,
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      item!.time,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          color: CustomColors.greenDark.withOpacity(0.5)),
+                    ),
+                  ],
+                )
               ],
             ),
           )),
