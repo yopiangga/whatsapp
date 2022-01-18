@@ -105,12 +105,59 @@ class _SDashboardState extends State<SDashboard>
               ),
             ),
           )),
+      floatingActionButton: Consumer<PNavBottom>(
+        builder: (context, value, _) => Container(
+          // color: Colors.amber,
+          width: 60,
+          height: value.isMenuActive == 1
+              ? 0
+              : value.isMenuActive == 2
+                  ? 130
+                  : value.isMenuActive == 3
+                      ? 60
+                      : 0,
+          child: Stack(
+            children: [
+              value.isMenuActive == 2
+                  ? Positioned(
+                      right: 0,
+                      bottom: 70,
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        backgroundColor: CustomColors.greenNotify,
+                        child: Icon(Icons.edit),
+                      ))
+                  : Container(),
+              value.isMenuActive == 2
+                  ? Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        backgroundColor: CustomColors.greenDark,
+                        child: Icon(Icons.camera_alt),
+                      ))
+                  : Container(),
+              value.isMenuActive == 3
+                  ? Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        backgroundColor: CustomColors.greenDark,
+                        child: Icon(Icons.call),
+                      ))
+                  : Container()
+            ],
+          ),
+        ),
+      ),
       body: TabBarView(
         physics: NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
           Center(
-            child: Text("Page"),
+            child: Text("Page Camera"),
           ),
           ListView(
             children: [
