@@ -17,11 +17,12 @@ class ListChatOverview extends StatelessWidget {
           color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: Column(
           children: allChatOverview
-              .map((e) => e.unread >= unread
-                  ? WChatOverview(
-                      item: e,
-                    )
-                  : Container())
+              .map((e) =>
+                  e.unread > 0 && unread == 1 || e.unread == 0 && unread == 0
+                      ? WChatOverview(
+                          item: e,
+                        )
+                      : Container())
               .toList()),
     );
   }
